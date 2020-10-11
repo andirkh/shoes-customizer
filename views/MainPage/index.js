@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import TestSVG from "../../components/TestSVG";
+import { Button } from 'react-bootstrap';
 
 const COLORIO = [
   { value: "red", label: "University Red" },
@@ -31,20 +32,22 @@ class MainPage extends React.Component {
         <h3>Eclipse</h3>
         {COLORIO.map((item) => {
           return (
-            <button onClick={() => this.handleChangeEclipseColor(item.value)}>
+            <Button variant="light" onClick={() => this.handleChangeEclipseColor(item.value)}>
               {item.label}
-            </button>
+            </Button>
           );
         })}
 
         <h3>Rectangle</h3>
-        {COLORIO.map((item) => {
-          return (
-            <button onClick={() => this.handleRectangleColor(item.value)}>
-              {item.label}
-            </button>
-          );
-        })}
+        <div className="d-flex align-items-center justify-content-center">
+          {COLORIO.map((item) => {
+            return (
+              <Button variant="light" onClick={() => this.handleRectangleColor(item.value)}>
+                {item.label}
+              </Button>
+            );
+          })}
+        </div>
       </Fragment>
     );
   }
