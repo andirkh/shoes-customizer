@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Shoe Configurator</title>
+        <title>Custom - One Triple Nine</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
