@@ -3,7 +3,12 @@ import TopBar from "../../components/TopBar";
 import Shoes368Side from "../../components/Shoes368Side";
 import ColorButtons from "../../components/ColorButtons";
 import { Col, Row } from "react-bootstrap";
-import { COLOR_WAY } from "../../utilities/constants";
+import {
+  COLOR_WAY,
+  COLOR_STITCHING,
+  COLOR_RUBBER,
+  COLOR_INNER,
+} from "../../utilities/constants";
 
 class MainPage extends React.Component {
   state = {
@@ -79,7 +84,7 @@ class MainPage extends React.Component {
               <ColorButtons
                 shoePartName="Inner"
                 stateName="innerColor"
-                colors={COLOR_WAY}
+                colors={COLOR_INNER}
                 changeColor={this.handleChangeColor}
                 stateNow={this.state.innerColor}
               />
@@ -95,7 +100,7 @@ class MainPage extends React.Component {
               <ColorButtons
                 shoePartName="Toe Cap"
                 stateName="toeCapColor"
-                colors={COLOR_WAY}
+                colors={COLOR_RUBBER}
                 changeColor={this.handleChangeColor}
                 stateNow={this.state.toeCapColor}
               />
@@ -103,7 +108,7 @@ class MainPage extends React.Component {
               <ColorButtons
                 shoePartName="Toe Cap Guard"
                 stateName="secondToeCapColor"
-                colors={COLOR_WAY}
+                colors={COLOR_RUBBER}
                 changeColor={this.handleChangeColor}
                 stateNow={this.state.secondToeCapColor}
               />
@@ -111,7 +116,7 @@ class MainPage extends React.Component {
               <ColorButtons
                 shoePartName="Mid Sole"
                 stateName="midSoleColor"
-                colors={COLOR_WAY}
+                colors={COLOR_RUBBER}
                 changeColor={this.handleChangeColor}
                 stateNow={this.state.midSoleColor}
               />
@@ -120,6 +125,14 @@ class MainPage extends React.Component {
                 shoePartName="Woven"
                 stateName="wovenColor"
                 colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.wovenColor}
+              />
+
+              <ColorButtons
+                shoePartName="Stitching"
+                stateName="stitchingColor"
+                colors={[...COLOR_STITCHING, ...COLOR_WAY]}
                 changeColor={this.handleChangeColor}
                 stateNow={this.state.wovenColor}
               />
