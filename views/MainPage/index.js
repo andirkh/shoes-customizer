@@ -134,7 +134,7 @@ class MainPage extends React.Component {
                 stateName="stitchingColor"
                 colors={[...COLOR_STITCHING, ...COLOR_WAY]}
                 changeColor={this.handleChangeColor}
-                stateNow={this.state.wovenColor}
+                stateNow={this.state.stitchingColor}
               />
             </Col>
           </Row>

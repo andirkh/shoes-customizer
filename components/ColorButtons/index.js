@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 
 class ColorButtons extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class ColorButtons extends React.Component {
       changeColor = () => {},
     } = this.props;
     return (
-      <div className="mb-5">
+      <Card className="mb-3 py-3 px-4">
         <h5 className="mb-3">{shoePartName}</h5>
         <div className="d-flex align-items-center justify-content-center">
           {colors.map((item) => {
@@ -28,7 +28,7 @@ class ColorButtons extends React.Component {
             );
           })}
         </div>
-      </div>
+      </Card>
     );
   }
 }
