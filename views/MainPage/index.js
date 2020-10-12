@@ -1,64 +1,131 @@
 import React, { Fragment } from "react";
 import TopBar from "../../components/TopBar";
-import Shoes368Side from '../../components/Shoes368Side';
-import { Button, Container, Col, Row } from 'react-bootstrap';
-import { COLOR_WAY } from '../../utilities/constants';
+import Shoes368Side from "../../components/Shoes368Side";
+import ColorButtons from "../../components/ColorButtons";
+import { Col, Row } from "react-bootstrap";
+import { COLOR_WAY } from "../../utilities/constants";
 
 class MainPage extends React.Component {
   state = {
-    eclipseColor: "red",
-    rectangleColor: "blue",
+    toeCapColor: "white",
+    secondToeCapColor: "white",
+    midSoleColor: "white",
+    tongueColor: "white",
+    innerColor: "white",
+    upperSideColor: "white",
+    backTabColor: "white",
+    upperLiningColor: "white",
+    quarterColor: "white",
+    upperTopColor: "white",
+    wovenColor: "white",
+
+    stitchingColor: "black",
   };
 
-  handleChangeEclipseColor = (color) => {
-    this.setState({ eclipseColor: color });
-  };
-
-  handleRectangleColor = (color) => {
-    this.setState({ rectangleColor: color });
+  handleChangeColor = (colorState, color) => {
+    this.setState({ [colorState]: color });
   };
 
   render() {
-    const { eclipseColor, rectangleColor } = this.state;
     return (
       <Fragment>
-        <TopBar />
-        <Container className="py-5">
+        <div className="py-5">
           <Row>
-            <Col>
+            <Col lg={7}>
               <div className="d-flex justify-content-center align-items-center">
-                <Shoes368Side />
+                <Shoes368Side {...this.state} />
               </div>
             </Col>
-            <Col>
-              <div className="mb-5">
-                <h4 className="mb-3">Eclipse</h4>
-                <div className="d-flex align-items-center justify-content-center">
-                  {COLOR_WAY.map((item) => {
-                    return (
-                      <Button variant="light" className="ml-2" onClick={() => this.handleChangeEclipseColor(item.value)}>
-                        {item.label}
-                      </Button>
-                    );
-                  })}
-                </div>
-              </div>
+            <Col lg={5}>
+              <ColorButtons
+                shoePartName="Upper Side"
+                stateName="upperSideColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.upperSideColor}
+              />
+              <ColorButtons
+                shoePartName="Upper Top"
+                stateName="upperTopColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.upperTopColor}
+              />
 
-              <div className="mb-5">
-                <h4 className="mb-3">Rectangle</h4>
-                <div className="d-flex align-items-center justify-content-center">
-                  {COLOR_WAY.map((item) => {
-                    return (
-                      <Button variant="light" className="ml-2" onClick={() => this.handleRectangleColor(item.value)}>
-                        {item.label}
-                      </Button>
-                    );
-                  })}
-                </div>
-              </div>
+              <ColorButtons
+                shoePartName="Upper Lining"
+                stateName="upperLiningColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.upperLiningColor}
+              />
+
+              <ColorButtons
+                shoePartName="Quarter"
+                stateName="quarterColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.quarterColor}
+              />
+
+              <ColorButtons
+                shoePartName="Tongue"
+                stateName="tongueColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.tongueColor}
+              />
+
+              <ColorButtons
+                shoePartName="Inner"
+                stateName="innerColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.innerColor}
+              />
+
+              <ColorButtons
+                shoePartName="Back Tab"
+                stateName="backTabColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.backTabColor}
+              />
+
+              <ColorButtons
+                shoePartName="Toe Cap"
+                stateName="toeCapColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.toeCapColor}
+              />
+
+              <ColorButtons
+                shoePartName="Toe Cap Guard"
+                stateName="secondToeCapColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.secondToeCapColor}
+              />
+
+              <ColorButtons
+                shoePartName="Mid Sole"
+                stateName="midSoleColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.midSoleColor}
+              />
+
+              <ColorButtons
+                shoePartName="Woven"
+                stateName="wovenColor"
+                colors={COLOR_WAY}
+                changeColor={this.handleChangeColor}
+                stateNow={this.state.wovenColor}
+              />
             </Col>
           </Row>
-        </Container>
+        </div>
       </Fragment>
     );
   }
