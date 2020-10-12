@@ -6,8 +6,8 @@ class TestSVG extends React.Component {
     const { eclipseColor, rectangleColor } = this.props;
     return (
       <svg
-        width="50%"
-        height="50%"
+        width="100%"
+        height="100%"
         viewBox="0 0 1024 768"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
