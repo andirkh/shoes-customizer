@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import TestSVG from "../../components/TestSVG";
 import TopBar from "../../components/TopBar";
 import Shoes368Side from '../../components/Shoes368Side';
 import { Button, Container, Col, Row } from 'react-bootstrap';
@@ -27,9 +26,6 @@ class MainPage extends React.Component {
         <Container className="py-5">
           <Row>
             <Col>
-              <div className="d-flex justify-content-center align-items-center">
-                <TestSVG eclipseColor={eclipseColor} rectangleColor={rectangleColor} />
-              </div>
               <div className="d-flex justify-content-center align-items-center">
                 <Shoes368Side />
               </div>
