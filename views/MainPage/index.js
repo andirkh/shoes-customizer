@@ -3,6 +3,8 @@ import TopBar from "../../components/TopBar";
 import Shoes368Side from "../../components/Shoes368Side";
 import ColorButtons from "../../components/ColorButtons";
 import { Col, Row } from "react-bootstrap";
+import { animated, Spring } from "react-spring/renderprops.cjs";
+
 import {
   COLOR_WAY,
   COLOR_STITCHING,
@@ -37,9 +39,17 @@ class MainPage extends React.Component {
         <div className="py-5">
           <Row>
             <Col lg={7}>
-              <div className="d-flex justify-content-center align-items-center">
-                <Shoes368Side {...this.state} />
-              </div>
+              <Spring
+                native
+                from={{ transform: "translate3d(-400px,0,0)" }}
+                to={{ transform: "translate3d(0,0px,0)" }}
+              >
+                {(props) => (
+                  <animated.div style={props}>
+                    <Shoes368Side {...this.state} />
+                  </animated.div>
+                )}
+              </Spring>
             </Col>
             <Col lg={5}>
               <ColorButtons
