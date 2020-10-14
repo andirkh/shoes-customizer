@@ -33,7 +33,7 @@ class MainPage extends React.Component {
       <Fragment>
         <div className="py-5">
           <Row>
-            <Col lg={7}>
+            <Col lg={7} xs={12}>
               <Spring
                 native
                 delay={500}
@@ -47,7 +47,7 @@ class MainPage extends React.Component {
                 )}
               </Spring>
             </Col>
-            <Col lg={5}>
+            <Col lg={5} xs={12}>
               <Trail
                 items={CUSTOMIZE_368}
                 keys={(item) => item.stateName}
