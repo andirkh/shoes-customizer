@@ -25,3 +25,66 @@ export const COLOR_INNER = [
   { value: "#1f1f1f", label: "Black" },
   { value: "White", label: "White" },
 ];
+
+export const CUSTOMIZE_368 = [
+  {
+    shoePartName: 'Upper',
+    stateName: 'upperSideColor',
+    colors: COLOR_WAY,
+  },
+  {
+    shoePartName: 'Upper Top',
+    stateName: 'upperTopColor',
+    colors: COLOR_WAY,
+  },
+  {
+    shoePartName: 'Upper Lining',
+    stateName: 'upperLiningColor',
+    colors: COLOR_WAY,
+  },
+  {
+    shoePartName: 'Quarter',
+    stateName: 'quarterColor',
+    colors: COLOR_WAY,
+  },
+  {
+    shoePartName: 'Tongue',
+    stateName: 'tongueColor',
+    colors: COLOR_WAY,
+  },
+  {
+    shoePartName: 'Inner',
+    stateName: 'innerColor',
+    colors: COLOR_INNER,
+  },
+  {
+    shoePartName: 'Back Tab',
+    stateName: 'backTabColor',
+    colors: COLOR_WAY,
+  },
+  {
+    shoePartName: 'Toe Cap',
+    stateName: 'toeCapColor',
+    colors: COLOR_RUBBER,
+  },
+  {
+    shoePartName: 'Bumper',
+    stateName: 'secondToeCapColor',
+    colors: COLOR_RUBBER,
+  },
+  {
+    shoePartName: 'Mid Sole',
+    stateName: 'midSoleColor',
+    colors: COLOR_RUBBER,
+  },
+  {
+    shoePartName: 'Woven Tag',
+    stateName: 'wovenColor',
+    colors: COLOR_WAY,
+  },
+  {
+    shoePartName: 'Stitching',
+    stateName: 'stitchingColor',
+    colors: COLOR_STITCHING,
+  },
+]

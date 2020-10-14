@@ -13,7 +13,7 @@ class ColorButtons extends React.Component {
     return (
       <Card className="mb-3 py-3 px-4">
         <h5 className="mb-3">{shoePartName}</h5>
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center">
           {colors.map((item) => {
             return (
               <Button
@@ -23,7 +23,18 @@ class ColorButtons extends React.Component {
                 onClick={() => changeColor(stateName, item.value)}
                 active={stateNow === item.value}
               >
-                {item.label}
+                <span
+                  style={{
+                    height: 15,
+                    width: 15,
+                    backgroundColor: item.value,
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    border: '1px solid #b1b1b1'
+                  }}
+                />
+                <br />
+                <span>{item.label}</span>
               </Button>
             );
           })}

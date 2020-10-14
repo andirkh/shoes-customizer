@@ -3,14 +3,9 @@ import TopBar from "../../components/TopBar";
 import Shoes368Side from "../../components/Shoes368Side";
 import ColorButtons from "../../components/ColorButtons";
 import { Col, Row } from "react-bootstrap";
-import { animated, Spring } from "react-spring/renderprops.cjs";
+import { animated, Spring, Trail } from "react-spring/renderprops.cjs";
 
-import {
-  COLOR_WAY,
-  COLOR_STITCHING,
-  COLOR_RUBBER,
-  COLOR_INNER,
-} from "../../utilities/constants";
+import { CUSTOMIZE_368 } from "../../utilities/constants";
 
 class MainPage extends React.Component {
   state = {
@@ -41,7 +36,8 @@ class MainPage extends React.Component {
             <Col lg={7}>
               <Spring
                 native
-                from={{ transform: "translate3d(-400px,0,0)" }}
+                delay={500}
+                from={{ transform: "translate3d(-1000px,0,0)" }}
                 to={{ transform: "translate3d(0,0px,0)" }}
               >
                 {(props) => (
@@ -52,100 +48,24 @@ class MainPage extends React.Component {
               </Spring>
             </Col>
             <Col lg={5}>
-              <ColorButtons
-                shoePartName="Upper Side"
-                stateName="upperSideColor"
-                colors={COLOR_WAY}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.upperSideColor}
-              />
-              <ColorButtons
-                shoePartName="Upper Top"
-                stateName="upperTopColor"
-                colors={COLOR_WAY}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.upperTopColor}
-              />
-
-              <ColorButtons
-                shoePartName="Upper Lining"
-                stateName="upperLiningColor"
-                colors={COLOR_WAY}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.upperLiningColor}
-              />
-
-              <ColorButtons
-                shoePartName="Quarter"
-                stateName="quarterColor"
-                colors={COLOR_WAY}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.quarterColor}
-              />
-
-              <ColorButtons
-                shoePartName="Tongue"
-                stateName="tongueColor"
-                colors={COLOR_WAY}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.tongueColor}
-              />
-
-              <ColorButtons
-                shoePartName="Inner"
-                stateName="innerColor"
-                colors={COLOR_INNER}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.innerColor}
-              />
-
-              <ColorButtons
-                shoePartName="Back Tab"
-                stateName="backTabColor"
-                colors={COLOR_WAY}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.backTabColor}
-              />
-
-              <ColorButtons
-                shoePartName="Toe Cap"
-                stateName="toeCapColor"
-                colors={COLOR_RUBBER}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.toeCapColor}
-              />
-
-              <ColorButtons
-                shoePartName="Toe Cap Guard"
-                stateName="secondToeCapColor"
-                colors={COLOR_RUBBER}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.secondToeCapColor}
-              />
-
-              <ColorButtons
-                shoePartName="Mid Sole"
-                stateName="midSoleColor"
-                colors={COLOR_RUBBER}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.midSoleColor}
-              />
-
-              <ColorButtons
-                shoePartName="Woven"
-                stateName="wovenColor"
-                colors={COLOR_WAY}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.wovenColor}
-              />
-
-              <ColorButtons
-                shoePartName="Stitching"
-                stateName="stitchingColor"
-                colors={[...COLOR_STITCHING, ...COLOR_WAY]}
-                changeColor={this.handleChangeColor}
-                stateNow={this.state.stitchingColor}
-              />
+              <Trail
+                items={CUSTOMIZE_368}
+                keys={(item) => item.stateName}
+                from={{ transform: "translate3d(400px, 0,0)" }}
+                to={{ transform: "translate3d(0,0px,0)" }}
+              >
+                {(item) => (props) => (
+                  <animated.div style={props}>
+                    <ColorButtons
+                      shoePartName={item.shoePartName}
+                      stateName={item.stateName}
+                      colors={item.colors}
+                      changeColor={this.handleChangeColor}
+                      stateNow={this.state[item.stateName]}
+                    />
+                  </animated.div>
+                )}
+              </Trail>
             </Col>
           </Row>
         </div>
