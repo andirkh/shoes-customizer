@@ -3,9 +3,10 @@ import TopBar from "../../components/TopBar";
 import ColorButtons from "../../components/ColorButtons";
 import Shoes368Side from "../../components/Shoes368Side";
 import Shoes368Back from "../../components/Shoes368Back";
-import Shoes368Bottom from '../../components/Shoes368Bottom';
-import TitleAnimated from '../../components/TitleAnimated';
-import Footer from '../../components/Footer';
+import Shoes368Bottom from "../../components/Shoes368Bottom";
+import TitleAnimated from "../../components/TitleAnimated";
+import BackTextInput from "../../components/BackTextInput";
+import Footer from "../../components/Footer";
 
 import { Col, Row } from "react-bootstrap";
 import { animated, Spring, Trail } from "react-spring/renderprops.cjs";
@@ -32,10 +33,19 @@ class MainPage extends React.Component {
     outSoleColor: COLOR_DEFAULT_WHITE,
 
     stitchingColor: COLOR_DEFAULT_BLACK,
+
+    backTextLeft: "",
+    backTextRight: "",
   };
 
   handleChangeColor = (colorState, color) => {
     this.setState({ [colorState]: color });
+  };
+
+  handleChangeBackText = (backTextState, text) => {
+    console.log("Text", text);
+    if (text.length > 4) return null;
+    this.setState({ [backTextState]: text });
   };
 
   render() {
@@ -85,6 +95,23 @@ class MainPage extends React.Component {
                   </animated.div>
                 )}
               </Spring>
+              <TitleAnimated className="ml-3 mb-5" title="4.) Back Text :" />
+              <Row className="p-3">
+                <Col xs={6}>
+                  <BackTextInput
+                    stateName="backTextLeft"
+                    onChange={this.handleChangeBackText}
+                    value={this.state.backTextLeft}
+                  />
+                </Col>
+                <Col xs={6}>
+                  <BackTextInput
+                    stateName="backTextRight"
+                    onChange={this.handleChangeBackText}
+                    value={this.state.backTextRight}
+                  />
+                </Col>
+              </Row>
             </Col>
             <Col lg={5} xs={12}>
               <Trail
