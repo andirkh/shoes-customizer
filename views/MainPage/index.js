@@ -169,7 +169,7 @@ class MainPage extends React.Component {
                       <Button
                         variant="outline-secondary"
                         size="sm"
-                        className="mr-2 px-3"
+                        className="mr-2 px-3 mb-2"
                         active={item.size === this.state.shoesSize}
                         disabled={!item.available}
                         onClick={() => this.handleChangeSize(item.size)}
