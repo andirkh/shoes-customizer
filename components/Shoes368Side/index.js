@@ -1,24 +1,28 @@
 import React from "react";
+import {
+  COLOR_DEFAULT_WHITE,
+  COLOR_DEFAULT_BLACK,
+} from "../../utilities/constants";
 
 class Shoes368Side extends React.Component {
   render() {
     const {
-      upperSideColor = "white",
-      upperTopColor = "white",
-      upperLiningColor = "white",
+      upperSideColor = COLOR_DEFAULT_WHITE,
+      upperTopColor = COLOR_DEFAULT_WHITE,
+      upperLiningColor = COLOR_DEFAULT_WHITE,
 
-      quarterColor = "white",
-      tongueColor = "white",
-      innerColor = "white",
-      backTabColor = "white",
+      quarterColor = COLOR_DEFAULT_WHITE,
+      tongueColor = COLOR_DEFAULT_WHITE,
+      innerColor = COLOR_DEFAULT_WHITE,
+      backTabColor = COLOR_DEFAULT_WHITE,
 
-      toeCapColor = "white",
-      secondToeCapColor = "white",
-      midSoleColor = "white",
+      toeCapColor = COLOR_DEFAULT_WHITE,
+      secondToeCapColor = COLOR_DEFAULT_WHITE,
+      midSoleColor = COLOR_DEFAULT_WHITE,
 
-      wovenColor = "white",
+      wovenColor = COLOR_DEFAULT_WHITE,
 
-      stitchingColor = "black",
+      stitchingColor = COLOR_DEFAULT_BLACK,
     } = this.props;
 
     return (

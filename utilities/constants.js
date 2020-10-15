@@ -18,7 +18,7 @@ export const COLOR_STITCHING = [
 export const COLOR_RUBBER = [
   { value: "#1f1f1f", label: "Black" },
   { value: "White", label: "White" },
-  { value: "#BE792F", label: "Gum" }
+  { value: "#BE792F", label: "Gum" },
 ];
 
 export const COLOR_INNER = [
@@ -28,63 +28,67 @@ export const COLOR_INNER = [
 
 export const CUSTOMIZE_368 = [
   {
-    shoePartName: 'Upper',
-    stateName: 'upperSideColor',
+    shoePartName: "Upper",
+    stateName: "upperSideColor",
     colors: COLOR_WAY,
   },
   {
-    shoePartName: 'Upper Top',
-    stateName: 'upperTopColor',
+    shoePartName: "Upper Top",
+    stateName: "upperTopColor",
     colors: COLOR_WAY,
   },
   {
-    shoePartName: 'Upper Lining',
-    stateName: 'upperLiningColor',
+    shoePartName: "Upper Lining",
+    stateName: "upperLiningColor",
     colors: COLOR_WAY,
   },
   {
-    shoePartName: 'Quarter',
-    stateName: 'quarterColor',
+    shoePartName: "Quarter",
+    stateName: "quarterColor",
     colors: COLOR_WAY,
   },
   {
-    shoePartName: 'Tongue',
-    stateName: 'tongueColor',
+    shoePartName: "Tongue",
+    stateName: "tongueColor",
     colors: COLOR_WAY,
   },
   {
-    shoePartName: 'Inner',
-    stateName: 'innerColor',
+    shoePartName: "Inner",
+    stateName: "innerColor",
     colors: COLOR_INNER,
   },
   {
-    shoePartName: 'Back Tab',
-    stateName: 'backTabColor',
+    shoePartName: "Back Tab",
+    stateName: "backTabColor",
     colors: COLOR_WAY,
   },
   {
-    shoePartName: 'Toe Cap',
-    stateName: 'toeCapColor',
+    shoePartName: "Toe Cap",
+    stateName: "toeCapColor",
     colors: COLOR_RUBBER,
   },
   {
-    shoePartName: 'Bumper',
-    stateName: 'secondToeCapColor',
+    shoePartName: "Bumper",
+    stateName: "secondToeCapColor",
     colors: COLOR_RUBBER,
   },
   {
-    shoePartName: 'Mid Sole',
-    stateName: 'midSoleColor',
+    shoePartName: "Mid Sole",
+    stateName: "midSoleColor",
     colors: COLOR_RUBBER,
   },
   {
-    shoePartName: 'Woven Tag',
-    stateName: 'wovenColor',
+    shoePartName: "Woven Tag",
+    stateName: "wovenColor",
     colors: COLOR_WAY,
   },
   {
-    shoePartName: 'Stitching',
-    stateName: 'stitchingColor',
+    shoePartName: "Stitching",
+    stateName: "stitchingColor",
     colors: COLOR_STITCHING,
   },
-]
+];
+
+export const COLOR_DEFAULT_WHITE = "#ffffff";
+
+export const COLOR_DEFAULT_BLACK = "#000000";

@@ -1,27 +1,32 @@
 import React, { Fragment } from "react";
 import TopBar from "../../components/TopBar";
 import Shoes368Side from "../../components/Shoes368Side";
+import Shoes368Back from "../../components/Shoes368Back";
 import ColorButtons from "../../components/ColorButtons";
 import { Col, Row } from "react-bootstrap";
 import { animated, Spring, Trail } from "react-spring/renderprops.cjs";
 
-import { CUSTOMIZE_368 } from "../../utilities/constants";
+import {
+  CUSTOMIZE_368,
+  COLOR_DEFAULT_WHITE,
+  COLOR_DEFAULT_BLACK,
+} from "../../utilities/constants";
 
 class MainPage extends React.Component {
   state = {
-    toeCapColor: "white",
-    secondToeCapColor: "white",
-    midSoleColor: "white",
-    tongueColor: "white",
-    innerColor: "white",
-    upperSideColor: "white",
-    backTabColor: "white",
-    upperLiningColor: "white",
-    quarterColor: "white",
-    upperTopColor: "white",
-    wovenColor: "white",
+    toeCapColor: COLOR_DEFAULT_WHITE,
+    secondToeCapColor: COLOR_DEFAULT_WHITE,
+    midSoleColor: COLOR_DEFAULT_WHITE,
+    tongueColor: COLOR_DEFAULT_WHITE,
+    innerColor: COLOR_DEFAULT_WHITE,
+    upperSideColor: COLOR_DEFAULT_WHITE,
+    backTabColor: COLOR_DEFAULT_WHITE,
+    upperLiningColor: COLOR_DEFAULT_WHITE,
+    quarterColor: COLOR_DEFAULT_WHITE,
+    upperTopColor: COLOR_DEFAULT_WHITE,
+    wovenColor: COLOR_DEFAULT_WHITE,
 
-    stitchingColor: "black",
+    stitchingColor: COLOR_DEFAULT_BLACK,
   };
 
   handleChangeColor = (colorState, color) => {
@@ -43,6 +48,18 @@ class MainPage extends React.Component {
                 {(props) => (
                   <animated.div style={props}>
                     <Shoes368Side {...this.state} />
+                  </animated.div>
+                )}
+              </Spring>
+              <Spring
+                native
+                delay={600}
+                from={{ transform: "translate3d(-800px,0,0)" }}
+                to={{ transform: "translate3d(0,0px,0)" }}
+              >
+                {(props) => (
+                  <animated.div style={props}>
+                    <Shoes368Back {...this.state} />
                   </animated.div>
                 )}
               </Spring>
