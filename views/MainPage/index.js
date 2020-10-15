@@ -38,10 +38,11 @@ class MainPage extends React.Component {
   render() {
     return (
       <Fragment>
+        <TopBar />
         <div className="py-5">
           <Row>
             <Col lg={7} xs={12}>
-              <TitleAnimated title="Side View :" />
+              <TitleAnimated title="1.) Side View :" />
               <Spring
                 native
                 delay={500}
@@ -55,7 +56,7 @@ class MainPage extends React.Component {
                 )}
               </Spring>
 
-              <TitleAnimated className="ml-3" title="Back View :" />
+              <TitleAnimated className="ml-3" title="2.) Back View :" />
               <Spring
                 native
                 delay={600}
