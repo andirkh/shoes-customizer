@@ -36,32 +36,30 @@ class ColorButtons extends React.Component {
           </div>
         </Card.Header>
         <Card.Body>
-          <div className="d-flex align-items-center">
-            {colors.map((item) => {
-              return (
-                <Button
-                  variant="outline-secondary"
-                  size="sm"
-                  className="ml-2"
-                  onClick={() => changeColor(stateName, item.value)}
-                  active={stateNow === item.value}
-                >
-                  <span
-                    style={{
-                      height: 15,
-                      width: 15,
-                      backgroundColor: item.value,
-                      borderRadius: "50%",
-                      display: "inline-block",
-                      border: "1px solid #b1b1b1",
-                    }}
-                  />
-                  <br />
-                  <span>{item.label}</span>
-                </Button>
-              );
-            })}
-          </div>
+          {colors.map((item) => {
+            return (
+              <Button
+                variant="outline-secondary"
+                size="sm"
+                className="ml-2 mb-2"
+                onClick={() => changeColor(stateName, item.value)}
+                active={stateNow === item.value}
+              >
+                <span
+                  style={{
+                    height: 15,
+                    width: 15,
+                    backgroundColor: item.value,
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    border: "1px solid #b1b1b1",
+                  }}
+                />
+                <br />
+                <span>{item.label}</span>
+              </Button>
+            );
+          })}
         </Card.Body>
       </Card>
     );

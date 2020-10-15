@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import MainPage from '../views/MainPage'
+import Head from "next/head";
+import MainPage from "../views/MainPage";
 
 export default function Home() {
   return (
@@ -11,5 +11,5 @@ export default function Home() {
 
       <MainPage />
     </div>
-  )
+  );
 }
