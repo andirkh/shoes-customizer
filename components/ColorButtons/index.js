@@ -14,15 +14,25 @@ class ColorButtons extends React.Component {
       colors = [],
       changeColor = () => {},
     } = this.props;
-    console.log("stateNow", stateNow);
+    const isSelected = !(
+      stateNow === COLOR_DEFAULT_BLACK || stateNow === COLOR_DEFAULT_WHITE
+    );
     return (
       <Card className="mb-3 py-3 px-4">
-        <h5 className="mb-4">
-          {stateNow === COLOR_DEFAULT_BLACK || stateNow === COLOR_DEFAULT_WHITE
-            ? ""
-            : "✅"}
-          <span className="ml-2">{shoePartName}</span>
-        </h5>
+        <div className="d-flex align-items-center justify-content-between mb-4">
+          <h5>
+            {isSelected && "✅"}
+            <span className="ml-2">{shoePartName}</span>
+          </h5>
+          {isSelected && (
+            <span
+              onClick={() => changeColor(stateName, COLOR_DEFAULT_WHITE)}
+              className="cursor-pointer text-muted"
+            >
+              reset
+            </span>
+          )}
+        </div>
         <div className="d-flex align-items-center">
           {colors.map((item) => {
             return (
