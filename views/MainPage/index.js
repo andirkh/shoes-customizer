@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import TopBar from "../../components/TopBar";
+import ColorButtons from "../../components/ColorButtons";
 import Shoes368Side from "../../components/Shoes368Side";
 import Shoes368Back from "../../components/Shoes368Back";
-import ColorButtons from "../../components/ColorButtons";
+import TitleAnimated from '../../components/TitleAnimated';
+
 import { Col, Row } from "react-bootstrap";
 import { animated, Spring, Trail } from "react-spring/renderprops.cjs";
 
@@ -39,6 +41,7 @@ class MainPage extends React.Component {
         <div className="py-5">
           <Row>
             <Col lg={7} xs={12}>
+              <TitleAnimated title="Side View :" />
               <Spring
                 native
                 delay={500}
@@ -51,6 +54,8 @@ class MainPage extends React.Component {
                   </animated.div>
                 )}
               </Spring>
+
+              <TitleAnimated className="ml-3" title="Back View :" />
               <Spring
                 native
                 delay={600}
