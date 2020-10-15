@@ -5,7 +5,7 @@ class TopBar extends React.Component {
   render() {
     return (
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">👟 Custom Order</Navbar.Brand>
+        <Navbar.Brand href="/">👟  Custom Order</Navbar.Brand>
       </Navbar>
     );
   }

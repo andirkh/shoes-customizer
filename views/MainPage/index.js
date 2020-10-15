@@ -3,6 +3,7 @@ import TopBar from "../../components/TopBar";
 import ColorButtons from "../../components/ColorButtons";
 import Shoes368Side from "../../components/Shoes368Side";
 import Shoes368Back from "../../components/Shoes368Back";
+import Shoes368Bottom from '../../components/Shoes368Bottom';
 import TitleAnimated from '../../components/TitleAnimated';
 
 import { Col, Row } from "react-bootstrap";
@@ -27,6 +28,7 @@ class MainPage extends React.Component {
     quarterColor: COLOR_DEFAULT_WHITE,
     upperTopColor: COLOR_DEFAULT_WHITE,
     wovenColor: COLOR_DEFAULT_WHITE,
+    outSoleColor: COLOR_DEFAULT_WHITE,
 
     stitchingColor: COLOR_DEFAULT_BLACK,
   };
@@ -66,6 +68,19 @@ class MainPage extends React.Component {
                 {(props) => (
                   <animated.div style={props}>
                     <Shoes368Back {...this.state} />
+                  </animated.div>
+                )}
+              </Spring>
+              <TitleAnimated className="ml-3" title="2.) Bottom View :" />
+              <Spring
+                native
+                delay={600}
+                from={{ transform: "translate3d(-800px,0,0)" }}
+                to={{ transform: "translate3d(0,0px,0)" }}
+              >
+                {(props) => (
+                  <animated.div style={props}>
+                    <Shoes368Bottom {...this.state} />
                   </animated.div>
                 )}
               </Spring>

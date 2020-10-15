@@ -26,6 +26,16 @@ export const COLOR_INNER = [
   { value: "White", label: "White" },
 ];
 
+export const COLOR_OUTSOLE = [
+  { value: "#FF7F50	", label: "Coral" },
+  { value: "#7FFF00	", label: "Green" },
+  { value: "blue", label: "Royale Blue" },
+  { value: "#87ceeb	", label: "Baby Blue" },
+  { value: "#800000	", label: "Burgundy" },
+  { value: "#1f1f1f", label: "Black" },
+  { value: "White", label: "White" },
+]
+
 export const CUSTOMIZE_368 = [
   {
     shoePartName: "Upper",
@@ -76,6 +86,11 @@ export const CUSTOMIZE_368 = [
     shoePartName: "Mid Sole",
     stateName: "midSoleColor",
     colors: COLOR_RUBBER,
+  },
+  {
+    shoePartName: "Out Sole",
+    stateName: "outSoleColor",
+    colors: COLOR_OUTSOLE,
   },
   {
     shoePartName: "Woven Tag",
