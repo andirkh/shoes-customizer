@@ -5,6 +5,7 @@ import Shoes368Side from "../../components/Shoes368Side";
 import Shoes368Back from "../../components/Shoes368Back";
 import Shoes368Bottom from '../../components/Shoes368Bottom';
 import TitleAnimated from '../../components/TitleAnimated';
+import Footer from '../../components/Footer';
 
 import { Col, Row } from "react-bootstrap";
 import { animated, Spring, Trail } from "react-spring/renderprops.cjs";
@@ -71,7 +72,7 @@ class MainPage extends React.Component {
                   </animated.div>
                 )}
               </Spring>
-              <TitleAnimated className="ml-3" title="2.) Bottom View :" />
+              <TitleAnimated className="ml-3" title="3.) Bottom View :" />
               <Spring
                 native
                 delay={600}
@@ -107,6 +108,7 @@ class MainPage extends React.Component {
             </Col>
           </Row>
         </div>
+        <Footer />
       </Fragment>
     );
   }
