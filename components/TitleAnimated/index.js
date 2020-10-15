@@ -12,9 +12,9 @@ class TitleAnimated extends React.Component {
         to={{ transform: "translate3d(0,0px,0px)", opacity: 1 }}
       >
         {(props) => (
-          <animated.h1 style={props} className="ml-3 text-dark">
+          <animated.h2 style={props} className="ml-3 text-dark py-2">
             {title}
-          </animated.h1>
+          </animated.h2>
         )}
       </Spring>
     )
