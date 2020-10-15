@@ -27,14 +27,14 @@ export const COLOR_INNER = [
 ];
 
 export const COLOR_OUTSOLE = [
-  { value: "#FF7F50	", label: "Coral" },
-  { value: "#7FFF00	", label: "Green" },
+  { value: "#FF7F50", label: "Coral" },
+  { value: "#7FFF00", label: "Green" },
   { value: "blue", label: "Royale Blue" },
-  { value: "#87ceeb	", label: "Baby Blue" },
-  { value: "#800000	", label: "Burgundy" },
+  { value: "#87ceeb", label: "Baby Blue" },
+  { value: "#800000", label: "Burgundy" },
   { value: "#1f1f1f", label: "Black" },
   { value: "White", label: "White" },
-]
+];
 
 export const CUSTOMIZE_368 = [
   {
@@ -107,3 +107,18 @@ export const CUSTOMIZE_368 = [
 export const COLOR_DEFAULT_WHITE = "#ffffff";
 
 export const COLOR_DEFAULT_BLACK = "#000000";
+
+export const SHOES_SIZE = [
+  { size: 36, available: false },
+  { size: 37, available: true },
+  { size: 38, available: true },
+  { size: 39, available: true },
+  { size: 40, available: true },
+  { size: 41, available: true },
+  { size: 42, available: true },
+  { size: 43, available: true },
+  { size: 44, available: true },
+  { size: 45, available: false },
+  { size: 46, available: true },
+  { size: 47, available: false },
+];
