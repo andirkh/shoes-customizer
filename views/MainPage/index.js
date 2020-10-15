@@ -75,8 +75,9 @@ class MainPage extends React.Component {
   handleOrderButton = () => {
     const stringState = JSON.stringify(this.state);
     const hash = window.btoa(stringState);
-    console.log("hash", hash);
     this.props.router.push(`?order=${hash}`);
+
+    alert('copy dan paste link di URL 👆')
   };
 
   render() {
