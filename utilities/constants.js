@@ -9,7 +9,7 @@ export const COLOR_WAY = [
   { value: "#808080", label: "Cool Grey" },
   { value: "#800000", label: "Burgundy" },
   { value: "#003366", label: "Midnight Blue" },
-  { value: "#28340A", label: "Turtle Green" }
+  { value: "#28340A", label: "Turtle Green" },
 ];
 
 export const COLOR_STITCHING = [
@@ -36,6 +36,7 @@ export const COLOR_OUTSOLE = [
   { value: "#800000", label: "Burgundy" },
   { value: "#1f1f1f", label: "Black" },
   { value: "White", label: "White" },
+  { value: "#542A0C", label: "Dark Brown" }
 ];
 
 export const CUSTOMIZE_368 = [
@@ -111,16 +112,16 @@ export const COLOR_DEFAULT_WHITE = "#ffffff";
 export const COLOR_DEFAULT_BLACK = "#000000";
 
 export const SHOES_SIZE = [
-  { size: 36, available: false },
-  { size: 37, available: true },
-  { size: 38, available: true },
-  { size: 39, available: true },
-  { size: 40, available: true },
-  { size: 41, available: true },
-  { size: 42, available: true },
-  { size: 43, available: true },
-  { size: 44, available: true },
-  { size: 45, available: false },
-  { size: 46, available: true },
-  { size: 47, available: false },
+  { size: 36, uk: 4.5, us: 5, cm: 23.5, available: false },
+  { size: 37, uk: 5, us: 5.5, cm: 24, available: true },
+  { size: 38, uk: 5.5, us: 6.5, cm: 24.5, available: true },
+  { size: 39, uk: 6.0, us: 7, cm: 25, available: true },
+  { size: 40, uk: 6.5, us: 7.5, cm: 25.5, available: true },
+  { size: 41, uk: 7.5, us: 8.5, cm: 26.5, available: true },
+  { size: 42, uk: 8, us: 9, cm: 27, available: true },
+  { size: 43, uk: 9, us: 10, cm: 28, available: true },
+  { size: 44, uk: 9.5, us: 10.5, cm: 28.5, available: true },
+  { size: 45, uk: 10, us: 11, cm: 29, available: false },
+  { size: 46, uk: 10.5, us: 11.5, cm: 30.5, available: true },
+  { size: 47, uk: 11, us: 12, cm: 31, available: false },
 ];

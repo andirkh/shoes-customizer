@@ -84,7 +84,7 @@ class MainPage extends React.Component {
     const { query: { order = null } = {} } = this.props.router || {};
     return (
       <Fragment>
-        <TopBar />
+        <TopBar clientName={this.state.clientName} />
         <div className="py-5">
           <Row>
             <Col lg={7} xs={12}>
@@ -197,7 +197,7 @@ class MainPage extends React.Component {
               </Row>
               <TitleAnimated className="ml-3 mb-5" title="6.) Size :" />
               <Row className="p-3 mb-5">
-                <Col xs={12} style={{ display: 'inline-flex' }}>
+                <Col xs={12} className="d-flex align-content-start flex-wrap">
                   <ShoesSizeButton
                     shoesSize={this.state.shoesSize}
                     changeSize={this.handleChangeSize}

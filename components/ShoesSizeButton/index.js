@@ -20,12 +20,13 @@ class ShoesSizeButton extends React.Component {
             <Button
               variant="outline-secondary"
               size="sm"
-              className="mr-2 px-3 mb-2"
+              className="mr-2 px-4 mb-2"
               active={item.size === shoesSize}
               disabled={!item.available}
               onClick={() => changeSize(item.size)}
+              title={`EUR ${item.size} / ${item.cm}cm`}
             >
-              {item.size}
+              {`EUR ${item.size} / ${item.cm}cm`}
             </Button>
           </animated.div>
         )}
