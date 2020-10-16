@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { withRouter } from 'next/router';
+import { withRouter } from "next/router";
 
 import TopBar from "../../components/TopBar";
 import ColorButtons from "../../components/ColorButtons";
@@ -9,6 +9,7 @@ import Shoes368Bottom from "../../components/Shoes368Bottom";
 import TitleAnimated from "../../components/TitleAnimated";
 import BackTextInput from "../../components/BackTextInput";
 import Footer from "../../components/Footer";
+import ShoesSizeButton from "../../components/ShoesSizeButton";
 
 import { Col, Row, Button } from "react-bootstrap";
 import { animated, Spring, Trail } from "react-spring/renderprops.cjs";
@@ -17,7 +18,6 @@ import {
   CUSTOMIZE_368,
   COLOR_DEFAULT_WHITE,
   COLOR_DEFAULT_BLACK,
-  SHOES_SIZE,
 } from "../../utilities/constants";
 
 class MainPage extends React.Component {
@@ -47,12 +47,12 @@ class MainPage extends React.Component {
     const { query: { order = "" } = {} } = this.props.router || {};
     const { query: { order: prevOrder = "" } = {} } = prevProps.router || {};
 
-    if(order !== prevOrder) {
+    if (order !== prevOrder) {
       const decodeOrder = window.atob(order);
       const stateObject = JSON.parse(decodeOrder);
       this.setState(stateObject);
     }
-  }
+  };
 
   handleChangeColor = (colorState, color) => {
     this.setState({ [colorState]: color });
@@ -77,7 +77,7 @@ class MainPage extends React.Component {
     const hash = window.btoa(stringState);
     this.props.router.push(`?order=${hash}`);
 
-    alert('copy dan paste link di URL 👆')
+    alert("copy dan paste link di URL 👆");
   };
 
   render() {
@@ -90,7 +90,7 @@ class MainPage extends React.Component {
               <TitleAnimated title="1.) Side View :" />
               <Spring
                 native
-                delay={500}
+                delay={750}
                 from={{ transform: "translate3d(-1000px,0,0)" }}
                 to={{ transform: "translate3d(0,0px,0)" }}
               >
@@ -104,7 +104,7 @@ class MainPage extends React.Component {
               <TitleAnimated className="ml-3" title="2.) Back View :" />
               <Spring
                 native
-                delay={600}
+                delay={2000}
                 from={{ transform: "translate3d(-800px,0,0)" }}
                 to={{ transform: "translate3d(0,0px,0)" }}
               >
@@ -117,7 +117,7 @@ class MainPage extends React.Component {
               <TitleAnimated className="ml-3" title="3.) Bottom View :" />
               <Spring
                 native
-                delay={600}
+                delay={3000}
                 from={{ transform: "translate3d(-800px,0,0)" }}
                 to={{ transform: "translate3d(0,0px,0)" }}
               >
@@ -130,54 +130,77 @@ class MainPage extends React.Component {
               <TitleAnimated className="ml-3 mb-5" title="4.) Back Text :" />
               <Row className="p-3 mb-5">
                 <Col xs={6}>
-                  <BackTextInput
-                    stateName="backTextLeft"
-                    onChange={this.handleChangeBackText}
-                    value={this.state.backTextLeft}
-                  />
+                  <Spring
+                    native
+                    delay={4000}
+                    from={{ transform: "translate3d(-800px,0,0)" }}
+                    to={{ transform: "translate3d(0,0px,0)" }}
+                  >
+                    {(props) => (
+                      <animated.div style={props}>
+                        <BackTextInput
+                          stateName="backTextLeft"
+                          onChange={this.handleChangeBackText}
+                          value={this.state.backTextLeft}
+                        />
+                      </animated.div>
+                    )}
+                  </Spring>
                 </Col>
                 <Col xs={6}>
-                  <BackTextInput
-                    stateName="backTextRight"
-                    onChange={this.handleChangeBackText}
-                    value={this.state.backTextRight}
-                  />
+                  <Spring
+                    native
+                    delay={4500}
+                    from={{ transform: "translate3d(-800px,0,0)" }}
+                    to={{ transform: "translate3d(0,0px,0)" }}
+                  >
+                    {(props) => (
+                      <animated.div style={props}>
+                        <BackTextInput
+                          stateName="backTextRight"
+                          onChange={this.handleChangeBackText}
+                          value={this.state.backTextRight}
+                        />
+                      </animated.div>
+                    )}
+                  </Spring>
                 </Col>
               </Row>
               <TitleAnimated className="ml-3 mb-5" title="5.) Client Name :" />
               <Row className="p-3 mb-5">
                 <Col xs={8}>
-                  <input
-                    value={this.state.clientName}
-                    className="p-3"
-                    onChange={(e) => this.handleClientName(e.target.value)}
-                    style={{
-                      fontSize: 18,
-                      width: "100%",
-                      height: 70,
-                      borderRadius: 5,
-                      border: "1px solid rgba(0,0,0,.125)",
-                    }}
-                  />
+                  <Spring
+                    native
+                    delay={5000}
+                    from={{ transform: "translate3d(-800px,0,0)" }}
+                    to={{ transform: "translate3d(0,0px,0)" }}
+                  >
+                    {(props) => (
+                      <animated.div style={props}>
+                        <input
+                          value={this.state.clientName}
+                          className="p-3"
+                          onChange={(e) => this.handleClientName(e.target.value)}
+                          style={{
+                            fontSize: 18,
+                            width: "100%",
+                            height: 70,
+                            borderRadius: 5,
+                            border: "1px solid rgba(0,0,0,.125)",
+                          }}
+                        />
+                      </animated.div>
+                    )}
+                  </Spring>
                 </Col>
               </Row>
               <TitleAnimated className="ml-3 mb-5" title="6.) Size :" />
               <Row className="p-3 mb-5">
-                <Col xs={12}>
-                  {SHOES_SIZE.map((item) => {
-                    return (
-                      <Button
-                        variant="outline-secondary"
-                        size="sm"
-                        className="mr-2 px-3 mb-2"
-                        active={item.size === this.state.shoesSize}
-                        disabled={!item.available}
-                        onClick={() => this.handleChangeSize(item.size)}
-                      >
-                        {item.size}
-                      </Button>
-                    );
-                  })}
+                <Col xs={12} style={{ display: 'inline-flex' }}>
+                  <ShoesSizeButton
+                    shoesSize={this.state.shoesSize}
+                    changeSize={this.handleChangeSize}
+                  />
                 </Col>
               </Row>
             </Col>
