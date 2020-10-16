@@ -72,7 +72,7 @@ class MainPage extends React.Component {
     this.setState({ shoesSize: size });
   };
 
-  handleOrderButton = () => {
+  handleSaveButton = () => {
     const stringState = JSON.stringify(this.state);
     const hash = window.btoa(stringState);
     this.props.router.push(`?order=${hash}`);
@@ -235,9 +235,9 @@ class MainPage extends React.Component {
                   variant="success"
                   size="lg"
                   className="px-5 py-3 mb-5"
-                  onClick={() => this.handleOrderButton()}
+                  onClick={() => this.handleSaveButton()}
                 >
-                  ORDER
+                  SAVE
                 </Button>
               </div>
             </Col>
