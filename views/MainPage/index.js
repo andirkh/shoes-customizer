@@ -11,7 +11,7 @@ import BackTextInput from "../../components/BackTextInput";
 import Footer from "../../components/Footer";
 import ShoesSizeButton from "../../components/ShoesSizeButton";
 
-import { Col, Row, Button } from "react-bootstrap";
+import { Col, Row, Button, Jumbotron } from "react-bootstrap";
 import { animated, Spring, Trail } from "react-spring/renderprops.cjs";
 
 import {
