@@ -81,6 +81,7 @@ class MainPage extends React.Component {
   };
 
   render() {
+    const { query: { order = null } = {} } = this.props.router || {};
     return (
       <Fragment>
         <TopBar />
@@ -220,6 +221,7 @@ class MainPage extends React.Component {
                       colors={item.colors}
                       changeColor={this.handleChangeColor}
                       stateNow={this.state[item.stateName]}
+                      hideViewMore={order}
                     />
                   </animated.div>
                 )}

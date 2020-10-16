@@ -6,6 +6,14 @@ import {
 } from "../../utilities/constants";
 
 class ColorButtons extends React.Component {
+  state = {
+    isMore: false,
+  };
+
+  handleIsMore = () => {
+    this.setState({ isMore: true });
+  };
+
   render() {
     const {
       shoePartName = "",
@@ -13,10 +21,16 @@ class ColorButtons extends React.Component {
       stateNow = "",
       colors = [],
       changeColor = () => {},
+      hideViewMore = false,
     } = this.props;
     const isSelected = !(
       stateNow === COLOR_DEFAULT_BLACK || stateNow === COLOR_DEFAULT_WHITE
     );
+
+    const colorsToIterate =
+      this.state.isMore || hideViewMore ? colors : colors.slice(0, 6);
+    const isShowMoreButton = colorsToIterate.length < colors.length;
+
     return (
       <Card className="mb-3">
         <Card.Header>
@@ -36,30 +50,43 @@ class ColorButtons extends React.Component {
           </div>
         </Card.Header>
         <Card.Body>
-          {colors.map((item) => {
-            return (
+          <div className="mb-3">
+            {colorsToIterate.map((item) => {
+              return (
+                <Button
+                  variant="outline-secondary"
+                  size="sm"
+                  className="ml-2 mb-2"
+                  onClick={() => changeColor(stateName, item.value)}
+                  active={stateNow === item.value}
+                >
+                  <span
+                    style={{
+                      height: 15,
+                      width: 15,
+                      backgroundColor: item.value,
+                      borderRadius: "50%",
+                      display: "inline-block",
+                      border: "1px solid #b1b1b1",
+                    }}
+                  />
+                  <br />
+                  <span>{item.label}</span>
+                </Button>
+              );
+            })}
+          </div>
+          {isShowMoreButton && (
+            <div className="d-flex justify-content-center">
               <Button
-                variant="outline-secondary"
+                variant="light"
                 size="sm"
-                className="ml-2 mb-2"
-                onClick={() => changeColor(stateName, item.value)}
-                active={stateNow === item.value}
+                onClick={() => this.handleIsMore()}
               >
-                <span
-                  style={{
-                    height: 15,
-                    width: 15,
-                    backgroundColor: item.value,
-                    borderRadius: "50%",
-                    display: "inline-block",
-                    border: "1px solid #b1b1b1",
-                  }}
-                />
-                <br />
-                <span>{item.label}</span>
+                View More
               </Button>
-            );
-          })}
+            </div>
+          )}
         </Card.Body>
       </Card>
     );

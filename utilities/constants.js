@@ -1,13 +1,15 @@
 export const COLOR_WAY = [
   { value: "red", label: "University Red" },
-  { value: "blue", label: "Royale Blue" },
+  { value: "blue", label: "Majorelle Blue" },
   { value: "yellow", label: "Canary" },
   { value: "#1f1f1f", label: "Black" },
-  // { value: "White", label: "White" },
+  { value: "white", label: "White" },
   { value: "#ffd2b4", label: "Peach" },
   { value: "#01796f", label: "Pine Green" },
-  // { value: "#808080", label: "Cool Grey" },
-  // { value: "#800000", label: "Maroon" }
+  { value: "#808080", label: "Cool Grey" },
+  { value: "#800000", label: "Burgundy" },
+  { value: "#003366", label: "Midnight Blue" },
+  { value: "#28340A", label: "Turtle Green" }
 ];
 
 export const COLOR_STITCHING = [
