@@ -12,6 +12,20 @@ export default function Home() {
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.ico" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-61952975-11"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-61952975-11');
+        `,
+          }}
+        />
       </Head>
       <MainPage />
     </div>
