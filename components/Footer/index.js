@@ -9,7 +9,7 @@ class Footer extends React.Component {
         </div>
         <div className="d-flex justify-content-center align-items-center px-3 py-4 bg-light">
           <p className="text-center">
-            {`Question, Information or Partnership:  `}
+            {`Question, Information or Say Hi:  `}
             <a
               href="mailto:andirkh.ui.engineer@icloud.com"
               target="_blank"
