@@ -13,7 +13,7 @@ class Footer extends React.Component {
             <a
               href="mailto:andirkh.ui.engineer@icloud.com"
               target="_blank"
-              className="ml-2"
+              className="ml-2 text-primary"
             >
               Contact Me
             </a>
