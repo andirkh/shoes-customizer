@@ -28,10 +28,14 @@ export default function Home() {
         />
       </Head>
       <div className="p-5">
-        <h1 className="mb-5">Hello There,</h1>
-        <p className="text-monospace">{`I'm Andi (@andirkh), on the last 2 years I'm working for the one of Texas - Austin based company as a Remote UI Software Engineer.`}</p>
-        <p className="text-monospace">{`This project is a fun project to keep myself always creative. I love sneakers so I thought, let's create a shoes customizer site 😛.`}</p>
-        <p className="text-monospace">{`I do have several fixes or features for this site. Here's the list of them :`}</p>
+        <Row>
+          <Col lg={7} xs={12}>
+            <h1 className="mb-5">Hello There,</h1>
+            <p className="text-monospace">{`I'm Andi (@andirkh), on the last 2 years I'm working for the one of Texas - Austin based company as a Remote UI Software Engineer.`}</p>
+            <p className="text-monospace">{`This project is a fun project to keep myself always creative. I love sneakers so I thought, let's create a shoes customizer site 😛.`}</p>
+            <p className="text-monospace">{`I do have several fixes or features for this site. Here's the list of them :`}</p>
+          </Col>
+        </Row>
       </div>
     </div>
   );
