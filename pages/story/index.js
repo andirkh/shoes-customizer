@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Jumbotron } from "react-bootstrap";
+import { Jumbotron, Row, Col } from "react-bootstrap";
 
 export default function Home() {
   return (
