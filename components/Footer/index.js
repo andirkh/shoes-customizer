@@ -3,7 +3,10 @@ import React from "react";
 class Footer extends React.Component {
   render() {
     return (
-      <div>
+      <div className="pt-5">
+        <div className="d-flex justify-content-center my-5">
+          <img src="/pouffer.svg" style={{ width: "150px" }} />
+        </div>
         <div className="d-flex justify-content-center my-5">
           <span>by @andirkh</span>
         </div>
